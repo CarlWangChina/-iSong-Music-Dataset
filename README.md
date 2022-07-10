@@ -4,7 +4,7 @@
 [view datasets](http://aige.midilib.com/%C3%A0imusic-datasets/datas/data-tone/)  
 
 ## Data Source and Processing
-1 Data Source
+1 Data Source/n
 To enrich the music styles of our dataset, we built the àiSong Dataset from scratch. We first collected 6,000 guitar scores, where we selected 650 oriental songs that meet our requirements. Furthermore, several music professionals are invited to manually standardize the naming rules and formats of our experimental data. We also split each song into mutually-different sections to reduce data repetition. Segments with different tonalities in the same song will also be listed separately. After 4 months of collection and processing, àiSong Dataset is finally completed, containing 2323 musical pieces.
 Our àiSong Dataset is mainly based on the Chinese national pentatonic, which is composed of five positive tones, namely, "Gong(Do), Shang(Re), Jue(Mi), Zhi(Sol) and Yu(La)" and various partial tones. To better train the SongDriver on our original àiSong Dataset, we transpose the national pentatonic into a natural major with Gong as the tonic. 
 
