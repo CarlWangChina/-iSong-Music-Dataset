@@ -1,10 +1,12 @@
 # àiSong datasets
-
-## dataset format description
+[download datasets](http://aige.midilib.com/%C3%A0imusic-datasets/%C3%A0imusic-datasets.zip)  
+[view datasets](http://aige.midilib.com/%C3%A0imusic-datasets/datas/data-tone/)  
+## Data Source and Processing
 ``` python
 1 Data Source
 To enrich the music styles of our dataset, we built the àiSong Dataset from scratch. We first collected 6,000 guitar scores, where we selected 650 oriental songs that meet our requirements. Furthermore, several music professionals are invited to manually standardize the naming rules and formats of our experimental data. We also split each song into mutually-different sections to reduce data repetition. Segments with different tonalities in the same song will also be listed separately. After 4 months of collection and processing, àiSong Dataset is finally completed, containing 2323 musical pieces.
 Our àiSong Dataset is mainly based on the Chinese national pentatonic, which is composed of five positive tones, namely, "Gong(Do), Shang(Re), Jue(Mi), Zhi(Sol) and Yu(La)" and various partial tones. To better train the SongDriver on our original àiSong Dataset, we transpose the national pentatonic into a natural major with Gong as the tonic. 
+
 2 Data Processing 
 The àiSong Dataset is further standardized following the steps below. 
 2.1 Rhythm Screening. We only reserve the music pieces in 4/4 and 2/4 time for subsequent sampling. To maintain a stable sampling granularity, pieces containing chords shorter than one beat are also deleted. 
@@ -12,13 +14,8 @@ The àiSong Dataset is further standardized following the steps below.
 2.3 Mode Unification. Based on the music mode information in the dataset, we convert all major mode music to C major and all minor mode music to A minor. The distinguishment between major mode and minor mode is important because the extraction of our proposed four features is influenced by the mode of current music.
 
 ```
-
-[download datasets](http://aige.midilib.com/%C3%A0imusic-datasets/%C3%A0imusic-datasets.zip)  
-[view datasets](http://aige.midilib.com/%C3%A0imusic-datasets/datas/data-tone/)  
-
-## dataset format description
+## Dataset Format Description
 ``` python
-
 We use three different parts of information to represent a song in our dataset, including 1) musical tonality and mode, 2)melody sequence, 3)chord sequence of the accompaniment. A brief example is as follows:
 
 #Tonality of the file
@@ -38,8 +35,7 @@ The chord sequence of accompaniment
 is also a one-dimensional timing array. The elements in the array are the chords at the corresponding time, which are expressed in the form of constituent tones. The chord sequence is sampled by quarter notes, that is, the time value of each element in the array is one beat.
 
 ```
-
-## parse file
+## Parse File
 ``` python
     file = open("./datas/data-tone/1.txt") # open file
     arr = file.read().split("\n") # read file
